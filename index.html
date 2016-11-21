@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia Game</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-6">
+
+				<h1>Totally Trivial Trivia</h1>
+
+				<!-- This is the button that sets the intro to display: none and removes display: none from the quiz section via jQuery. -->
+				<button type="button" class="btn btn-secondary btn-lg" id="goUnderButton">Start!</button>
+
+			</div>
+		</div>
+
+		<div class="row" id="quizSection" style="display: none">
+			<div class="col-sm-5">
+				<div id="timeCounter"></div>
+			</div>
+
+			<div class="col-sm-6">
+				<!-- Question 1 -->
+				<h3 class="question">1. This state's capital has a higher elevation than any other state capital: </h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio1">Wyoming</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio1">Arizona</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio1">New Mexico</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio1" value="true">Colorado</label>
+
+
+				<!-- Question 2 -->
+				<h3 class="question">2. What is the capital of Pennsylvania?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio2">Pittsburg</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio2">Harrisburg</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio2" value="true">Philadelphia</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio2">Scranton</label>
+
+
+				<!-- Question 3 -->
+				<h3 class="question">3. In which state is the Grand Canyon located ?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio3" value="true">Nevada</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio3">Colorado</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio3">Utah</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio3">Arizona</label>
+
+
+				<!-- Question 4 -->
+				<h3 class="question">4. Montpeiler is the capital of Vermont ?
+				</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio4">True</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio4">False</label>
+
+
+				<!-- Question 5 -->
+				<h3 class="question">5. Which is the north-easternmost state in the USA? ?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio5" value="true">Massachusetts</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">New Hampshire</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Maine</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Rhode Island</label>
+
+
+				<!-- Question 6 -->
+				<h3 class="question">6. How many lakes comprise the Great Lakes ?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio5" value="true">4</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">5</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">6</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">7</label>
+
+
+				<!-- Question 7 -->
+				<h3 class="question">7. Which is the largest state in the USA ?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio5" value="true">Alaska</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Montana</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Texas</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">California</label>
+
+
+				<!-- Question 8 -->
+				<h3 class="question">8. Which river forms a natural border between the US and Mexico ?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio5" value="true">Red River</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Rio Grande</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Mississippi River</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Gila River</label>
+
+
+				<!-- Question 9 -->
+				<h3 class="question">9. Which is the highest peak in the Appalachian Mountains ?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio5" value="true">Mount Angel</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Mount Mitchell</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Mount Pocono</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Mount Morris</label>
+
+
+				<!-- Question 10 -->
+				<h3 class="question">10. In which city of California is Sea World located ?</h3>
+
+				<label class="radio-inline answer"><input type="radio" name="optradio5" value="true">Santa Barbera</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">San Francisco</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">San Diego</label>
+				<label class="radio-inline answer"><input type="radio" name="optradio5">Los Angeles</label>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Here we added a link to the jQuery library -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js">
+	</script>
+
+	<!-- Below is where our Javascript file connection will go -->
+	<script type="text/javascript" src="assets/javascript/app.js">
+	</script>
+
+</body>
+</html>
