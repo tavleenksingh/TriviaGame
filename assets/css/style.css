@@ -1,3 +1,17 @@
 body{
+	background-image: url(../images/restaurant.png);
+}
+
+.container{
+	background-color: yellow;
+	margin-top: 50px;
 	
+}
+
+h1{
+	text-align: center;
+}
+
+.button{
+	align-self: center;
 }
