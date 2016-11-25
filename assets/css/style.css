@@ -8,13 +8,9 @@ body{
 	
 }
 
-h1, h2, h3{
+h1, h2, {
 	text-align: center;
 }
-/*
-h2{
-	text-align: center;
-}*/
 
 .answer{
 	text-align: center;
@@ -23,4 +19,9 @@ h2{
 
 .button{
 	align-self: center;
+}
+
+label + input[type='radio'] {
+  width: 30%;
+  margin: 0 10% 0 1%;
 }

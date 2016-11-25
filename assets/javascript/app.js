@@ -1,54 +1,77 @@
 $(document).ready(function(){
 
-	//var totalNumberOfQuestions = 10;
+	// setting my global variables
+	var counter;
+	var totalQuestions = 10;
 	var correctAnswer = 0;
 	var incorrectAnswer = 0;
-	var totalTime = 10;
-	var counter ;
+	var totalTime = 60;
 	var unansweredQuestions = 0;
 
 
+	// this function will rum when user presses the start button
 	function start(){
 		counter = setInterval(decrement, 1000);
 		$("#quizSection").show();
 		$("#startButton").hide();
 	};
 
-	function submit(){
-		clearInterval(counter);
+
+	// this function will decrement the counter as the quiz progresses
+	function decrement() {
+      totalTime--;
+      $("#timeDisplay").html("<h2>" + "Time Remaining: " + totalTime + "</h2>");
+      if (totalTime === 0) {
+        submit();
+        alert("Time Up!");
+      };
+    };
+
+
+    // this function will reset the game 
+    function reset(){
+	correctAnswer = 0;
+	incorrectAnswer = 0;
+	unansweredQuestions = 0;
+	$("#resultsSection").hide();
+	$("#startButton").show();
+	$('input[type="radio"]:checked').prop('checked', false);
+	$("#results").html("<h3> Your Results</h3><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
 	};
 
-	function decrement() {
-    //  Decrease number by one.
-      totalTime--;
-      //  Show the number in the #show-number tag.
-      $("#timeDisplay").html("<h2>" + "Time Remaining: " + totalTime + "</h2>");
-      //  Once number hits zero...
-      if (totalTime === 0) {
-        //  ...run the stop function.
-        submit();
-        //  Alert the user that time is up.
-        alert("Time Up!");
-      }
-    }
+
+	// this function will display the quiz results and check user input
+	function submit(){
+	$("#quizSection").hide();
+	$("#resultsSection").show();
+	$("input:checked").each(function(){
+		if($(this).val() == "true"){
+			correctAnswer++;
+		}
+		else{
+			incorrectAnswer++;
+		};
+		unansweredQuestions = totalQuestions - (correctAnswer + incorrectAnswer);
+		$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
+		});
+	clearInterval(counter);
+	totalTime = 60;
+	};
 
 
+	//this will start the game and dispaly all the questions
     $(document).on("click", "#startButton", function(){
 		start();
 	});
 
+    // this will display the results on pressing submit button
 	$(document).on("click", "#submitButton", function(){
 		submit();
 	});
 
-
-
-
-
-
-
-
-
-
+	// this will start over the game by running the function reset.
+	$(document).on("click", "#startOverButton", function(){
+		reset();
+	});
 
 });
