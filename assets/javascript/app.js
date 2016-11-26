@@ -52,7 +52,7 @@ $(document).ready(function(){
 			incorrectAnswer++;
 		};
 		unansweredQuestions = totalQuestions - (correctAnswer + incorrectAnswer);
-		$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
+		$("#results").html("<h3>All Done!</h3><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
 		});
 	clearInterval(counter);
 	totalTime = 60;

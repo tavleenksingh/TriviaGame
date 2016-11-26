@@ -1,15 +1,18 @@
 body{
 	background-image: url(../images/restaurant.png);
+	text-align: center;
 }
 
 .container{
 	background-color: yellow;
 	margin-top: 50px;
+	height: 100%;
 	
 }
 
-h1, h2, {
+h1, h2 {
 	text-align: center;
+	margin: 10%;
 }
 
 .answer{
@@ -17,11 +20,9 @@ h1, h2, {
 	align-self: center;
 }
 
-.button{
-	align-self: center;
+#timeDisplay{
+	text-align: center;
 }
 
-label + input[type='radio'] {
-  width: 30%;
-  margin: 0 10% 0 1%;
-}
+
+
